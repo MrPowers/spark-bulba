@@ -14,4 +14,8 @@ git commit -am "Version bump to $1"
 echo "Push the version bump commit to master"
 git push origin master
 
+echo "Create a tag"
+git tag v$1
+git push origin v$1
+
 
