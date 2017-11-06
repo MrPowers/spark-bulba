@@ -18,4 +18,5 @@ echo "Create a tag"
 git tag v$1
 git push origin v$1
 
-
+echo "Create a GitHub release"
+hub release create -m "Release v$1" v$1
