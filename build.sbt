@@ -1,6 +1,6 @@
 name := "spark-bulba"
 
-version := "0.0.6"
+version := "0.0.7"
 
 scalaVersion := "2.11.8"
 
@@ -17,3 +17,7 @@ fork in Test := true
 javaOptions ++= Seq("-Xms512M", "-Xmx2048M", "-XX:+CMSClassUnloadingEnabled")
 
 testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oD")
+
+artifactName := { (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
+  artifact.name + "_" + sv.binary + "-" + sparkVersion.value + "_" + module.revision + "." + artifact.extension
+}

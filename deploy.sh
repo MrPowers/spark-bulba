@@ -18,5 +18,9 @@ echo "Create a tag"
 git tag v$1
 git push origin v$1
 
+echo "Create a JAR file"
+sbt package
+
 echo "Create a GitHub release"
-hub release create -m "Release v$1" v$1
+hub release create -a target/scala-2.11/spark-bulba_2.11-2.2.0_$1.jar -m "Release v$1" v$1
+
