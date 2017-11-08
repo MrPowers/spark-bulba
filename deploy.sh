@@ -6,6 +6,13 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+if [ $CURRENT_BRANCH != "master" ]
+  then
+    echo "Must be on master branch"
+    exit 1
+fi
+
 echo Project version $1
 
 echo "Create a git commit to bump the version"
