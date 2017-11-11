@@ -1,6 +1,6 @@
 name := "spark-bulba"
 
-version := "0.0.10"
+version := "5.0.0"
 
 scalaVersion := "2.11.8"
 
